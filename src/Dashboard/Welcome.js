@@ -59,10 +59,10 @@ const Welcome = () => {
             </Button>
             <Button
               variant="contained"
-              href="https://google.com"
+              href="https://github.com/manchivarusanthosh/react-admin-ex.git"
               startIcon={<CodeIcon />}
             >
-              Home-2
+              Project Source Code
             </Button>
           </CardActions>
         </Box>
