@@ -54,6 +54,7 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <div>
+      {/* Welcome card is rendered here */}
       <Welcome />
       <Box
         sx={{
