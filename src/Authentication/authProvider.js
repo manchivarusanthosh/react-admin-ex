@@ -5,6 +5,7 @@ const authProvider = {
     // accept all username/password combinations
     return Promise.resolve();
   },
+
   // called when the user clicks on the logout button
   logout: () => {
     localStorage.removeItem("username");
