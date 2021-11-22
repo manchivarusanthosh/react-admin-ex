@@ -52,10 +52,10 @@ const Welcome = () => {
           <CardActions className={classes.actions}>
             <Button
               variant="contained"
-              href="https://google.com"
+              href="https://github.com/manchivarusanthosh/"
               startIcon={<HomeIcon />}
             >
-              Home
+              My Git Home
             </Button>
             <Button
               variant="contained"

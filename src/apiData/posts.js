@@ -19,7 +19,7 @@ export const VisitorIcon = Icon;
 
 const useStyles = makeStyles({
   table: {
-    backgroundColor: "#b9bdc9",
+    backgroundColor: "#fffff",
   },
   headerCell: {
     backgroundColor: "#fffff",
@@ -50,28 +50,6 @@ export const PostCreate = (props) => (
     </SimpleForm>
   </Create>
 );
-
-// const postFilters = [
-//   <TextInput source="q" label="Search" alwaysOn />,
-//   <ReferenceInput source="userId" label="User" reference="users" allowEmpty>
-//     <SelectInput optionText="name" />
-//   </ReferenceInput>,
-// ];
-
-// const ColoredNumberField = (props) => {
-//   const classes = useStyles();
-//   return (
-//     <NumberField
-//       className={classnames({
-//         [classes.small]: props.record[props.source] < 100,
-//         [classes.big]: props.record[props.source] >= 100,
-//       })}
-//       {...props}
-//     />
-//   );
-// };
-
-// ColoredNumberField.defaultProps = NumberField.defaultProps;
 
 export const PostList = ({ ...props }) => {
   const classes = useStyles();

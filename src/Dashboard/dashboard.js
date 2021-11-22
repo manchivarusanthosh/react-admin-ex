@@ -4,6 +4,12 @@ import Paper from "@mui/material/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import Welcome from "./Welcome";
+import jsonServerProvider from "ra-data-json-server";
+
+const dataProvider = jsonServerProvider(
+  "https://jsonplaceholder.typicode.com/users"
+);
+console.log("Data Provider", dataProvider.getData);
 
 const useStyles = makeStyles((theme) => ({
   individualContainer: {
@@ -20,13 +26,15 @@ export default function Dashboard() {
   const [todos, setTodos] = useState(0);
   const [usersData, setUsersData] = useState(0);
   const [photosData, setPhotosData] = useState(0);
+  const [commentsData, setCommentsData] = useState(0);
 
   async function getData(fetchingParam) {
     const response = await fetch(
+      //eslint-disable-next-line
       "https://jsonplaceholder.typicode.com/" + `${fetchingParam}`
     );
     const data = await response.json();
-    console.log("data lenght", data.length);
+
     switch (fetchingParam) {
       case "posts":
         setPostData(data.length);
@@ -40,12 +48,15 @@ export default function Dashboard() {
       case "photos":
         setPhotosData(data.length);
         break;
+      case "comments":
+        setCommentsData(data.length);
+        break;
       default:
         return;
     }
   }
 
-  const urlParams = ["posts", "photos", "users", "todos"];
+  const urlParams = ["posts", "photos", "users", "todos", "comments"];
 
   urlParams.map((param) => {
     return getData(param);
@@ -69,16 +80,19 @@ export default function Dashboard() {
         }}
       >
         <Paper elevation={3} className={classes.individualContainer}>
-          Todo's : {todos}
+          User's : {usersData}
         </Paper>
         <Paper elevation={3} className={classes.individualContainer}>
           Posts : {postData}
         </Paper>
         <Paper elevation={3} className={classes.individualContainer}>
-          Photos : {photosData}
+          Comments : {commentsData}
         </Paper>
         <Paper elevation={3} className={classes.individualContainer}>
-          User's Count : {usersData}
+          Todo's : {todos}
+        </Paper>
+        <Paper elevation={3} className={classes.individualContainer}>
+          Photos : {photosData}
         </Paper>
       </Box>
     </div>
