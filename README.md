@@ -1,3 +1,6 @@
+Preview of react-admin-ex
+![react_admin](https://user-images.githubusercontent.com/87632554/162137028-32753aed-2d4b-4df3-a370-3b6bc6fed529.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
